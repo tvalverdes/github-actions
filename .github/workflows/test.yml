@@ -1,6 +1,6 @@
 name: Workflow de prueba
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   file-creation:
@@ -27,5 +27,3 @@ jobs:
     steps:
       - name: Print job3
         run: echo "Job3 running"
-      - name: Read file
-        run: cat file.txt

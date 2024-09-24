@@ -15,11 +15,17 @@ jobs:
 
       - name: set text
         run: echo "Hello world" > file.txt
-
-      - name: cat file
-        run: cat file.txt
   job2:
     runs-on: ubuntu-latest
     steps:
       - name: Print job2
         run: echo "Job2 running"
+    
+  job3:
+    runs-on: ubuntu-latest
+    needs: [file-creation]
+    steps:
+      - name: Print job3
+        run: echo "Job3 running"
+      - name: Read file
+        run: cat file.txt

@@ -3,12 +3,21 @@ name: Workflow de prueba
 on: [push]
 
 jobs:
-  job1:
+  file-creation:
     runs-on: ubuntu-latest
 
     steps:
       - name: Hola mundo
         run: echo "Hola mundo"
+      
+      - name: touch file
+        run: touch file.txt
+
+      - name: set text
+        run: echo "Hello world" > file.txt
+
+      - name: cat file
+        run: cat file.txt
   job2:
     runs-on: ubuntu-latest
     steps:

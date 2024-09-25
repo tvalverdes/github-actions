@@ -27,8 +27,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: [file-creation]
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4.0.4            
+      - uses: actions/checkout@v4.1.7
+      - uses: actions/setup-node@v4.0.4
+        with:
+          node-version: latest
+          cache: 'npm'
+          cache-dependency-path: ./node_modules
+      - run: npm install express
+      - run: npm install cors
 
       - name: Checkout
         uses: actions/checkout@v4.1.7

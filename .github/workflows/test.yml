@@ -31,8 +31,6 @@ jobs:
       - uses: actions/setup-node@v4.0.4
         with:
           node-version: latest
-          cache: 'npm'
-          cache-dependency-path: ./node_modules
       - run: npm install express
       - run: npm install cors
 

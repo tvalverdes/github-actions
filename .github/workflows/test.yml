@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Print job2
         run: echo "Job2 running"
+
+  
     
   job3:
     runs-on: ubuntu-latest
@@ -27,3 +29,7 @@ jobs:
     steps:
       - name: Print job3
         run: echo "Job3 running"
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+            

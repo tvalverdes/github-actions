@@ -35,5 +35,5 @@ jobs:
       - name: LS
         run: |
           chmod +x script.sh
-          ./
+          ./script.sh
             

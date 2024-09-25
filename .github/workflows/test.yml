@@ -15,11 +15,15 @@ jobs:
 
       - name: set text
         run: echo "Hello world" > file.txt
-  job2:
+
+  action-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Print job2
-        run: echo "Job2 running"
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+        
+      - name: Run local action
+        uses: ./.github/actions/my-action
 
   
     
